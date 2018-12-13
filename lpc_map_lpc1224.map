@@ -849,7 +849,7 @@ Discarded input sections
  .data          0x0000000000000000        0x0 objs/apps/rf_sub1G/passerelle/main.o
  .bss           0x0000000000000000        0x0 objs/apps/rf_sub1G/passerelle/main.o
  .text.isRigthSalt
-                0x0000000000000000       0x2c objs/apps/rf_sub1G/passerelle/main.o
+                0x0000000000000000       0x20 objs/apps/rf_sub1G/passerelle/main.o
  .data.chenillard_active
                 0x0000000000000000        0x1 objs/apps/rf_sub1G/passerelle/main.o
  .bss.update_display
@@ -919,7 +919,7 @@ LOAD objs/apps/rf_sub1G/passerelle/main.o
                 0x0000000010000fe0                _end_stack = ((_sram_base + _sram_size) - 0x20)
                 0x0000000000000000                . = ORIGIN (flash)
 
-.text           0x0000000000000000     0x2110
+.text           0x0000000000000000     0x2124
  FILL mask 0xff
  *(SORT(.vectors))
  .vectors       0x0000000000000000       0xc0 objs/core/bootstrap.o
@@ -1217,40 +1217,40 @@ LOAD objs/apps/rf_sub1G/passerelle/main.o
                 0x0000000000002030       0x30 objs/apps/rf_sub1G/passerelle/main.o
                 0x0000000000002030                common_pins
  .rodata.str1.4
-                0x0000000000002060       0xa8 objs/apps/rf_sub1G/passerelle/main.o
-                                         0xa6 (size before relaxing)
+                0x0000000000002060       0xbc objs/apps/rf_sub1G/passerelle/main.o
+                                         0xba (size before relaxing)
  .rodata.status_led_green
-                0x0000000000002108        0x3 objs/apps/rf_sub1G/passerelle/main.o
-                0x0000000000002108                status_led_green
- *fill*         0x000000000000210b        0x1 ff
+                0x000000000000211c        0x3 objs/apps/rf_sub1G/passerelle/main.o
+                0x000000000000211c                status_led_green
+ *fill*         0x000000000000211f        0x1 ff
  .rodata.cc1101_cs_pin
-                0x000000000000210c        0x3 objs/apps/rf_sub1G/passerelle/main.o
-                0x000000000000210c                cc1101_cs_pin
+                0x0000000000002120        0x3 objs/apps/rf_sub1G/passerelle/main.o
+                0x0000000000002120                cc1101_cs_pin
  *(SORT(.got*))
-                0x0000000000002110                . = ALIGN (0x4)
- *fill*         0x000000000000210f        0x1 ff
-                0x0000000000002110                _end_text = .
+                0x0000000000002124                . = ALIGN (0x4)
+ *fill*         0x0000000000002123        0x1 ff
+                0x0000000000002124                _end_text = .
 
-.glue_7         0x0000000000002110        0x0
- .glue_7        0x0000000000002110        0x0 linker stubs
+.glue_7         0x0000000000002124        0x0
+ .glue_7        0x0000000000002124        0x0 linker stubs
 
-.glue_7t        0x0000000000002110        0x0
- .glue_7t       0x0000000000002110        0x0 linker stubs
+.glue_7t        0x0000000000002124        0x0
+ .glue_7t       0x0000000000002124        0x0 linker stubs
 
-.vfp11_veneer   0x0000000000002110        0x0
- .vfp11_veneer  0x0000000000002110        0x0 linker stubs
+.vfp11_veneer   0x0000000000002124        0x0
+ .vfp11_veneer  0x0000000000002124        0x0 linker stubs
 
-.v4_bx          0x0000000000002110        0x0
- .v4_bx         0x0000000000002110        0x0 linker stubs
+.v4_bx          0x0000000000002124        0x0
+ .v4_bx         0x0000000000002124        0x0 linker stubs
 
-.iplt           0x0000000000002110        0x0
- .iplt          0x0000000000002110        0x0 objs/core/watchdog.o
+.iplt           0x0000000000002124        0x0
+ .iplt          0x0000000000002124        0x0 objs/core/watchdog.o
 
-.rel.dyn        0x0000000000002110        0x0
- .rel.iplt      0x0000000000002110        0x0 objs/core/watchdog.o
-                0x0000000000002110                . = ALIGN (0x4)
+.rel.dyn        0x0000000000002124        0x0
+ .rel.iplt      0x0000000000002124        0x0 objs/core/watchdog.o
+                0x0000000000002124                . = ALIGN (0x4)
 
-.data           0x0000000010000000      0x1c2 load address 0x0000000000002110
+.data           0x0000000010000000      0x1c2 load address 0x0000000000002124
                 0x0000000010000000                _start_data = .
  *(SORT(.data*))
  .data.lpc_private
@@ -1272,11 +1272,11 @@ LOAD objs/apps/rf_sub1G/passerelle/main.o
                 0x00000000100001bc        0x6 objs/apps/rf_sub1G/passerelle/main.o
                 0x00000000100001c2                _end_data = .
 
-.igot.plt       0x00000000100001c4        0x0 load address 0x00000000000022d2
+.igot.plt       0x00000000100001c4        0x0 load address 0x00000000000022e6
  .igot.plt      0x00000000100001c4        0x0 objs/core/watchdog.o
                 0x00000000100001c4                . = ALIGN (0x4)
 
-.bss            0x00000000100001c4      0x18c load address 0x00000000000022d2
+.bss            0x00000000100001c4      0x18c load address 0x00000000000022e6
                 0x00000000100001c4                _start_bss = .
  *(SORT(.bss*))
  .bss.wdt_callback

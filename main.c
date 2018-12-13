@@ -31,7 +31,7 @@
 #include "extdrv/cc1101.h"
 #include "extdrv/status_led.h"
 
-#define SALT 1567464
+#define SALT "1567464"
 
 #define MODULE_VERSION	0x03
 #define MODULE_NAME "RF Sub1G - USB"
@@ -114,7 +114,7 @@ static uint8_t rf_specific_settings[] = {
 	CC1101_REGS(gdo_config[0]), 0x2E, /* GDO_2 - FIXME : do something usefull with it for tests */
 	CC1101_REGS(pkt_ctrl[0]), 0x0F, /* Accept all sync, CRC err auto flush, Append, Addr check and Bcast */
 #if (RF_915MHz == 1)
-	/* FIXME : Add here a define protected list of settings for 915MHz configuration */
+	/* FIXME : Add here a define protected list of seSALTttings for 915MHz configuration */
 #endif
 };
 
