@@ -1,6 +1,6 @@
-Oled display example for displays using SSD130x driver
+Support for the Sub 1GHz module in USB or UEXT version
 
-Copyright 2016 Nathael Pajani <nathael.pajani@ed3l.fr>
+Copyright 2013 Nathael Pajani <nathael.pajani@ed3l.fr>
 
 
 /* ****************************************************************************
@@ -19,7 +19,10 @@ Copyright 2016 Nathael Pajani <nathael.pajani@ed3l.fr>
  *
  *************************************************************************** */
 
-This example shows the support of the I²C driver for the Adafruit SSD1306 oled display
-controller, it is a 128 x 64 Oled display board.
-For Adafruit Oled you need to connect the reset pin, for this example it is connected 
-to the GPIO_0_0 of the micro-controller.
+This module uses the CC1101 transceiver to provide Sub 1GHz Rf connectivity.
+
+This module will change the color of an associated micro-controller by pressing 
+the ISP button.
+
+Do not forget to exchange the addresses of the recipient and sender modules.
+
