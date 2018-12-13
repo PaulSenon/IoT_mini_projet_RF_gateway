@@ -174,7 +174,7 @@ static volatile uint8_t cc_tx_buff[RF_BUFF_LEN];
 static volatile uint8_t cc_ptr = 0;
 
 void mettageDansLeBuffer(uint32_t gpio){
-	char message = "hello";
+	char message = "hello\n\r";
 	
 	memcpy((char*)&(cc_tx_buff[0]), message, sizeof(message));
 	cc_ptr = sizeof(message); 
