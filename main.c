@@ -75,7 +75,7 @@ const struct pio status_led_green = LPC_GPIO_0_28;
 const struct pio status_led_red = LPC_GPIO_0_29;
 
 const struct pio button = LPC_GPIO_0_12; /* ISP button */
-
+ 
 
 /***************************************************************************** */
 void system_init()
@@ -156,8 +156,8 @@ void handle_rf_rx_data(void)
 	ret = cc1101_receive_packet(data, RF_BUFF_LEN, &status);
 	/* Go back to RX mode */
 	cc1101_enter_rx_mode();
-	if(isRigthSalt(data[2])){
-		uprintf(UART0, "%s\n\r", data[2]);
+	if(isRigthSalt(data+2)){
+		uprintf(UART0, "%s\n\r", data+2);
 	}
 
 
@@ -165,7 +165,7 @@ void handle_rf_rx_data(void)
 	uprintf(UART0, "RF: ret:%d, st: %d.\n\r", ret, status);
     uprintf(UART0, "RF: data lenght: %d.\n\r", data[0]);
     uprintf(UART0, "RF: destination: %x.\n\r", data[1]);
-    uprintf(UART0, "RF: message: %c.\n\r", data[2]);
+    uprintf(UART0, "RF: message: %s.\n\r", data+2);
 #endif
 }
 static volatile uint32_t cc_tx = 0;
