@@ -47,8 +47,8 @@
 #define RF_BUFF_LEN  64
 
 #define SELECTED_FREQ  FREQ_SEL_48MHz
-#define DEVICE_ADDRESS  0x01 /* Addresses 0x00 and 0xFF are broadcast */
-#define NEIGHBOR_ADDRESS 0x02 /* Address of the associated device */
+#define DEVICE_ADDRESS  0x61 /* Addresses 0x00 and 0xFF are broadcast */
+#define NEIGHBOR_ADDRESS 0x34 /* Address of the associated device */
 /***************************************************************************** */
 /* Pins configuration */
 /* pins blocks are passed to set_pins() for pins configuration.
