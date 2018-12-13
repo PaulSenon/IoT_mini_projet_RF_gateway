@@ -845,17 +845,17 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 objs/extdrv/ssd130x_oled_buffer_s.o
  .ARM.attributes
                 0x0000000000000000       0x21 objs/extdrv/ssd130x_oled_buffer_s.o
- .text          0x0000000000000000        0x0 objs/apps/rf_sub1G/passerelle/main.o
- .data          0x0000000000000000        0x0 objs/apps/rf_sub1G/passerelle/main.o
- .bss           0x0000000000000000        0x0 objs/apps/rf_sub1G/passerelle/main.o
+ .text          0x0000000000000000        0x0 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+ .data          0x0000000000000000        0x0 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+ .bss           0x0000000000000000        0x0 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
  .text.isRigthSalt
-                0x0000000000000000       0x20 objs/apps/rf_sub1G/passerelle/main.o
+                0x0000000000000000       0x20 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
  .data.chenillard_active
-                0x0000000000000000        0x1 objs/apps/rf_sub1G/passerelle/main.o
+                0x0000000000000000        0x1 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
  .bss.update_display
-                0x0000000000000000        0x4 objs/apps/rf_sub1G/passerelle/main.o
+                0x0000000000000000        0x4 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
  .rodata.cc1101_gdo2
-                0x0000000000000000        0x3 objs/apps/rf_sub1G/passerelle/main.o
+                0x0000000000000000        0x3 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
 
 Memory Configuration
 
@@ -913,13 +913,13 @@ LOAD objs/lib/vsprintf.o
 LOAD objs/lib/utils.o
 LOAD objs/lib/protocols/dtplug/slave.o
 LOAD objs/extdrv/ssd130x_oled_buffer_s.o
-LOAD objs/apps/rf_sub1G/passerelle/main.o
+LOAD objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
                 0x0000000000001000                _sram_size = LENGTH (sram)
                 0x0000000010000000                _sram_base = ORIGIN (sram)
                 0x0000000010000fe0                _end_stack = ((_sram_base + _sram_size) - 0x20)
                 0x0000000000000000                . = ORIGIN (flash)
 
-.text           0x0000000000000000     0x2124
+.text           0x0000000000000000     0x2028
  FILL mask 0xff
  *(SORT(.vectors))
  .vectors       0x0000000000000000       0xc0 objs/core/bootstrap.o
@@ -929,7 +929,7 @@ LOAD objs/apps/rf_sub1G/passerelle/main.o
                 0x00000000000000c0       0x60 objs/core/bootstrap.o
                 0x00000000000000c0                Reset_Handler
  .text.system_init
-                0x0000000000000120       0x2c objs/apps/rf_sub1G/passerelle/main.o
+                0x0000000000000120       0x2c objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
                 0x0000000000000120                system_init
                 0x00000000000002fc                . = 0x2fc
  *fill*         0x000000000000014c      0x1b0 ff
@@ -1144,113 +1144,113 @@ LOAD objs/apps/rf_sub1G/passerelle/main.o
                 0x0000000000001828      0x184 objs/lib/vsprintf.o
                 0x0000000000001828                vsnprintf
  .text.rf_rx_calback
-                0x00000000000019ac        0xc objs/apps/rf_sub1G/passerelle/main.o
+                0x00000000000019ac        0xc objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
                 0x00000000000019ac                rf_rx_calback
  .text.mettageDansLeBuffer
-                0x00000000000019b8       0x2c objs/apps/rf_sub1G/passerelle/main.o
+                0x00000000000019b8       0x2c objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
                 0x00000000000019b8                mettageDansLeBuffer
  .text.fault_info
-                0x00000000000019e4        0xc objs/apps/rf_sub1G/passerelle/main.o
+                0x00000000000019e4        0xc objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
                 0x00000000000019e4                fault_info
  .text.rf_config
-                0x00000000000019f0       0x58 objs/apps/rf_sub1G/passerelle/main.o
+                0x00000000000019f0       0x58 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
                 0x00000000000019f0                rf_config
  .text.handle_rf_rx_data
-                0x0000000000001a48       0x8c objs/apps/rf_sub1G/passerelle/main.o
+                0x0000000000001a48       0x48 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
                 0x0000000000001a48                handle_rf_rx_data
  .text.send_on_rf
-                0x0000000000001ad4       0x80 objs/apps/rf_sub1G/passerelle/main.o
-                0x0000000000001ad4                send_on_rf
+                0x0000000000001a90       0x48 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+                0x0000000000001a90                send_on_rf
  .text.startup.main
-                0x0000000000001b54       0xd4 objs/apps/rf_sub1G/passerelle/main.o
-                0x0000000000001b54                main
+                0x0000000000001ad8       0xd4 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+                0x0000000000001ad8                main
  *(SORT(.rodata*))
  .rodata.__FUNCTION__.3723
-                0x0000000000001c28        0xc objs/core/fault_handlers.o
+                0x0000000000001bac        0xc objs/core/fault_handlers.o
  .rodata.__FUNCTION__.3731
-                0x0000000000001c34        0xc objs/core/fault_handlers.o
+                0x0000000000001bb8        0xc objs/core/fault_handlers.o
  .rodata.__FUNCTION__.3727
-                0x0000000000001c40       0x12 objs/core/fault_handlers.o
- *fill*         0x0000000000001c52        0x2 ff
+                0x0000000000001bc4       0x12 objs/core/fault_handlers.o
+ *fill*         0x0000000000001bd6        0x2 ff
  .rodata.__FUNCTION__.3735
-                0x0000000000001c54        0xf objs/core/fault_handlers.o
- *fill*         0x0000000000001c63        0x1 ff
+                0x0000000000001bd8        0xf objs/core/fault_handlers.o
+ *fill*         0x0000000000001be7        0x1 ff
  .rodata.pio_regs_handles_port0
-                0x0000000000001c64       0x80 objs/core/pio.o
+                0x0000000000001be8       0x80 objs/core/pio.o
  .rodata.pio_regs_handles_port1
-                0x0000000000001ce4       0x1c objs/core/pio.o
+                0x0000000000001c68       0x1c objs/core/pio.o
  .rodata.pio_regs_handles_port2
-                0x0000000000001d00       0x40 objs/core/pio.o
+                0x0000000000001c84       0x40 objs/core/pio.o
  .rodata.status_led
-                0x0000000000001d40       0x2c objs/extdrv/status_led.o
- .rodata.steps  0x0000000000001d6c        0xb objs/extdrv/status_led.o
- *fill*         0x0000000000001d77        0x1 ff
+                0x0000000000001cc4       0x2c objs/extdrv/status_led.o
+ .rodata.steps  0x0000000000001cf0        0xb objs/extdrv/status_led.o
+ *fill*         0x0000000000001cfb        0x1 ff
  .rodata.rf_init_settings
-                0x0000000000001d78       0x48 objs/extdrv/cc1101.o
+                0x0000000000001cfc       0x48 objs/extdrv/cc1101.o
  .rodata.set_gpio_callback
-                0x0000000000001dc0       0x14 objs/drivers/gpio.o
+                0x0000000000001d44       0x14 objs/drivers/gpio.o
  .rodata.uart_defs
-                0x0000000000001dd4       0x10 objs/drivers/serial.o
+                0x0000000000001d58       0x10 objs/drivers/serial.o
  .rodata.I2C_0_Handler
-                0x0000000000001de4      0x164 objs/drivers/i2c.o
+                0x0000000000001d68      0x164 objs/drivers/i2c.o
  .rodata.vsnprintf
-                0x0000000000001f48       0xc8 objs/lib/vsprintf.o
+                0x0000000000001ecc       0xc8 objs/lib/vsprintf.o
  .rodata.digits.3755
-                0x0000000000002010       0x10 objs/lib/vsprintf.o
+                0x0000000000001f94       0x10 objs/lib/vsprintf.o
  .rodata.button
-                0x0000000000002020        0x3 objs/apps/rf_sub1G/passerelle/main.o
-                0x0000000000002020                button
- *fill*         0x0000000000002023        0x1 ff
+                0x0000000000001fa4        0x3 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+                0x0000000000001fa4                button
+ *fill*         0x0000000000001fa7        0x1 ff
  .rodata.cc1101_miso_pin
-                0x0000000000002024        0x3 objs/apps/rf_sub1G/passerelle/main.o
-                0x0000000000002024                cc1101_miso_pin
- *fill*         0x0000000000002027        0x1 ff
+                0x0000000000001fa8        0x3 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+                0x0000000000001fa8                cc1101_miso_pin
+ *fill*         0x0000000000001fab        0x1 ff
  .rodata.status_led_red
-                0x0000000000002028        0x3 objs/apps/rf_sub1G/passerelle/main.o
-                0x0000000000002028                status_led_red
- *fill*         0x000000000000202b        0x1 ff
+                0x0000000000001fac        0x3 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+                0x0000000000001fac                status_led_red
+ *fill*         0x0000000000001faf        0x1 ff
  .rodata.cc1101_gdo0
-                0x000000000000202c        0x3 objs/apps/rf_sub1G/passerelle/main.o
-                0x000000000000202c                cc1101_gdo0
- *fill*         0x000000000000202f        0x1 ff
+                0x0000000000001fb0        0x3 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+                0x0000000000001fb0                cc1101_gdo0
+ *fill*         0x0000000000001fb3        0x1 ff
  .rodata.common_pins
-                0x0000000000002030       0x30 objs/apps/rf_sub1G/passerelle/main.o
-                0x0000000000002030                common_pins
+                0x0000000000001fb4       0x30 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+                0x0000000000001fb4                common_pins
  .rodata.str1.4
-                0x0000000000002060       0xbc objs/apps/rf_sub1G/passerelle/main.o
-                                         0xba (size before relaxing)
+                0x0000000000001fe4       0x3c objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+                                         0x3a (size before relaxing)
  .rodata.status_led_green
-                0x000000000000211c        0x3 objs/apps/rf_sub1G/passerelle/main.o
-                0x000000000000211c                status_led_green
- *fill*         0x000000000000211f        0x1 ff
+                0x0000000000002020        0x3 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+                0x0000000000002020                status_led_green
+ *fill*         0x0000000000002023        0x1 ff
  .rodata.cc1101_cs_pin
-                0x0000000000002120        0x3 objs/apps/rf_sub1G/passerelle/main.o
-                0x0000000000002120                cc1101_cs_pin
+                0x0000000000002024        0x3 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+                0x0000000000002024                cc1101_cs_pin
  *(SORT(.got*))
-                0x0000000000002124                . = ALIGN (0x4)
- *fill*         0x0000000000002123        0x1 ff
-                0x0000000000002124                _end_text = .
+                0x0000000000002028                . = ALIGN (0x4)
+ *fill*         0x0000000000002027        0x1 ff
+                0x0000000000002028                _end_text = .
 
-.glue_7         0x0000000000002124        0x0
- .glue_7        0x0000000000002124        0x0 linker stubs
+.glue_7         0x0000000000002028        0x0
+ .glue_7        0x0000000000002028        0x0 linker stubs
 
-.glue_7t        0x0000000000002124        0x0
- .glue_7t       0x0000000000002124        0x0 linker stubs
+.glue_7t        0x0000000000002028        0x0
+ .glue_7t       0x0000000000002028        0x0 linker stubs
 
-.vfp11_veneer   0x0000000000002124        0x0
- .vfp11_veneer  0x0000000000002124        0x0 linker stubs
+.vfp11_veneer   0x0000000000002028        0x0
+ .vfp11_veneer  0x0000000000002028        0x0 linker stubs
 
-.v4_bx          0x0000000000002124        0x0
- .v4_bx         0x0000000000002124        0x0 linker stubs
+.v4_bx          0x0000000000002028        0x0
+ .v4_bx         0x0000000000002028        0x0 linker stubs
 
-.iplt           0x0000000000002124        0x0
- .iplt          0x0000000000002124        0x0 objs/core/watchdog.o
+.iplt           0x0000000000002028        0x0
+ .iplt          0x0000000000002028        0x0 objs/core/watchdog.o
 
-.rel.dyn        0x0000000000002124        0x0
- .rel.iplt      0x0000000000002124        0x0 objs/core/watchdog.o
-                0x0000000000002124                . = ALIGN (0x4)
+.rel.dyn        0x0000000000002028        0x0
+ .rel.iplt      0x0000000000002028        0x0 objs/core/watchdog.o
+                0x0000000000002028                . = ALIGN (0x4)
 
-.data           0x0000000010000000      0x1c2 load address 0x0000000000002124
+.data           0x0000000010000000      0x1c2 load address 0x0000000000002028
                 0x0000000010000000                _start_data = .
  *(SORT(.data*))
  .data.lpc_private
@@ -1269,14 +1269,14 @@ LOAD objs/apps/rf_sub1G/passerelle/main.o
  .data.i2c_buses
                 0x000000001000017c       0x40 objs/drivers/i2c.o
  .data.rf_specific_settings
-                0x00000000100001bc        0x6 objs/apps/rf_sub1G/passerelle/main.o
+                0x00000000100001bc        0x6 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
                 0x00000000100001c2                _end_data = .
 
-.igot.plt       0x00000000100001c4        0x0 load address 0x00000000000022e6
+.igot.plt       0x00000000100001c4        0x0 load address 0x00000000000021ea
  .igot.plt      0x00000000100001c4        0x0 objs/core/watchdog.o
                 0x00000000100001c4                . = ALIGN (0x4)
 
-.bss            0x00000000100001c4      0x18c load address 0x00000000000022e6
+.bss            0x00000000100001c4      0x18c load address 0x00000000000021ea
                 0x00000000100001c4                _start_bss = .
  *(SORT(.bss*))
  .bss.wdt_callback
@@ -1313,15 +1313,15 @@ LOAD objs/apps/rf_sub1G/passerelle/main.o
  .bss.adc_int_callback
                 0x00000000100002fc        0x4 objs/drivers/adc.o
                 0x00000000100002fc                adc_int_callback
- .bss.cc_tx     0x0000000010000300        0x4 objs/apps/rf_sub1G/passerelle/main.o
+ .bss.cc_tx     0x0000000010000300        0x4 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
  .bss.cc_tx_buff
-                0x0000000010000304       0x40 objs/apps/rf_sub1G/passerelle/main.o
- .bss.check_rx  0x0000000010000344        0x4 objs/apps/rf_sub1G/passerelle/main.o
+                0x0000000010000304       0x40 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+ .bss.check_rx  0x0000000010000344        0x4 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
  .bss.periodic_match
                 0x0000000010000348        0x1 objs/drivers/rtc.o
- .bss.cc_ptr    0x0000000010000349        0x1 objs/apps/rf_sub1G/passerelle/main.o
+ .bss.cc_ptr    0x0000000010000349        0x1 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
  .bss.loop.4472
-                0x000000001000034a        0x1 objs/apps/rf_sub1G/passerelle/main.o
+                0x000000001000034a        0x1 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
  *(SORT(COMMON))
  *fill*         0x000000001000034b        0x1 
  COMMON         0x000000001000034c        0x4 objs/core/rom_helpers.o
@@ -1330,7 +1330,7 @@ LOAD objs/apps/rf_sub1G/passerelle/main.o
                 0x0000000010000350                . = ALIGN (0x4)
                 0x0000000010000350                _end = .
                 [!provide]                        PROVIDE (end, .)
-OUTPUT(apps/rf_sub1G/passerelle/passerelle.elf elf32-littlearm)
+OUTPUT(apps/rf_sub1G/IoT_mini_projet_RF_gateway/IoT_mini_projet_RF_gateway.elf elf32-littlearm)
 
 .comment        0x0000000000000000       0x2b
  .comment       0x0000000000000000       0x2b objs/core/watchdog.o
@@ -1353,7 +1353,7 @@ OUTPUT(apps/rf_sub1G/passerelle/passerelle.elf elf32-littlearm)
  .comment       0x000000000000002b       0x2c objs/lib/uprintf.o
  .comment       0x000000000000002b       0x2c objs/lib/string.o
  .comment       0x000000000000002b       0x2c objs/lib/vsprintf.o
- .comment       0x000000000000002b       0x2c objs/apps/rf_sub1G/passerelle/main.o
+ .comment       0x000000000000002b       0x2c objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
 
 .ARM.attributes
                 0x0000000000000000       0x2f
@@ -1396,4 +1396,4 @@ OUTPUT(apps/rf_sub1G/passerelle/passerelle.elf elf32-littlearm)
  .ARM.attributes
                 0x0000000000000372       0x31 objs/lib/vsprintf.o
  .ARM.attributes
-                0x00000000000003a3       0x31 objs/apps/rf_sub1G/passerelle/main.o
+                0x00000000000003a3       0x31 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o

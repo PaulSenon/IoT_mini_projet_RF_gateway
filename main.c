@@ -160,13 +160,6 @@ void handle_rf_rx_data(void)
 		uprintf(UART0, "%s\n\r", data+2);
 	}
 
-
-#ifdef DEBUG
-	uprintf(UART0, "RF: ret:%d, st: %d.\n\r", ret, status);
-    uprintf(UART0, "RF: data lenght: %d.\n\r", data[0]);
-    uprintf(UART0, "RF: destination: %x.\n\r", data[1]);
-    uprintf(UART0, "RF: message: %s.\n\r", data+2);
-#endif
 }
 static volatile uint32_t cc_tx = 0;
 static volatile uint32_t update_display = 0;
@@ -201,13 +194,6 @@ void send_on_rf(void)
 		cc1101_flush_tx_fifo();
 	}
 	ret = cc1101_send_packet(cc_tx_data, (tx_len + 2));
-
-#ifdef DEBUG
-	uprintf(UART0, "Tx ret: %d\n\r", ret);
-    uprintf(UART0, "RF: data lenght: %d.\n\r", cc_tx_data[0]);
-    uprintf(UART0, "RF: destination: %x.\n\r", cc_tx_data[1]);
-    uprintf(UART0, "RF: message: %c.\n\r", cc_tx_data[2]);
-#endif
 }
 
 
