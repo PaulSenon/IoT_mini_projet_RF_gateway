@@ -169,7 +169,7 @@ static volatile uint8_t cc_ptr = 0;
 void sendResetScreenConfig_DEBUG(uint32_t gpio){
 	char message[50];
 	int len = 50;
-	snprintf ( message, 50, "%d:LHT",SALT);
+	snprintf ( message, 50, "%s:LHT",SALT);
 	memcpy((char*)cc_tx_buff, message, len);
 	cc_ptr = len;
     cc_tx=1;
