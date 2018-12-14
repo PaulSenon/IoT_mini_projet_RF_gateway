@@ -850,6 +850,8 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
  .text.isRigthSalt
                 0x0000000000000000       0x20 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+ .rodata.button
+                0x0000000000000000        0x3 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
  .data.chenillard_active
                 0x0000000000000000        0x1 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
  .bss.update_display
@@ -919,7 +921,7 @@ LOAD objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
                 0x0000000010000fe0                _end_stack = ((_sram_base + _sram_size) - 0x20)
                 0x0000000000000000                . = ORIGIN (flash)
 
-.text           0x0000000000000000     0x2028
+.text           0x0000000000000000     0x201c
  FILL mask 0xff
  *(SORT(.vectors))
  .vectors       0x0000000000000000       0xc0 objs/core/bootstrap.o
@@ -1146,24 +1148,24 @@ LOAD objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
  .text.rf_rx_calback
                 0x00000000000019ac        0xc objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
                 0x00000000000019ac                rf_rx_calback
- .text.mettageDansLeBuffer
-                0x00000000000019b8       0x2c objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
-                0x00000000000019b8                mettageDansLeBuffer
+ .text.handle_uart_cmd
+                0x00000000000019b8       0x3c objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+                0x00000000000019b8                handle_uart_cmd
  .text.fault_info
-                0x00000000000019e4        0xc objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
-                0x00000000000019e4                fault_info
+                0x00000000000019f4        0xc objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+                0x00000000000019f4                fault_info
  .text.rf_config
-                0x00000000000019f0       0x58 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
-                0x00000000000019f0                rf_config
+                0x0000000000001a00       0x58 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+                0x0000000000001a00                rf_config
  .text.handle_rf_rx_data
-                0x0000000000001a48       0x48 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
-                0x0000000000001a48                handle_rf_rx_data
+                0x0000000000001a58       0x48 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+                0x0000000000001a58                handle_rf_rx_data
  .text.send_on_rf
-                0x0000000000001a90       0x48 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
-                0x0000000000001a90                send_on_rf
+                0x0000000000001aa0       0x48 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+                0x0000000000001aa0                send_on_rf
  .text.startup.main
-                0x0000000000001ad8       0xd4 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
-                0x0000000000001ad8                main
+                0x0000000000001ae8       0xc4 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+                0x0000000000001ae8                main
  *(SORT(.rodata*))
  .rodata.__FUNCTION__.3723
                 0x0000000000001bac        0xc objs/core/fault_handlers.o
@@ -1197,60 +1199,56 @@ LOAD objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
                 0x0000000000001ecc       0xc8 objs/lib/vsprintf.o
  .rodata.digits.3755
                 0x0000000000001f94       0x10 objs/lib/vsprintf.o
- .rodata.button
-                0x0000000000001fa4        0x3 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
-                0x0000000000001fa4                button
- *fill*         0x0000000000001fa7        0x1 ff
  .rodata.cc1101_miso_pin
-                0x0000000000001fa8        0x3 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
-                0x0000000000001fa8                cc1101_miso_pin
- *fill*         0x0000000000001fab        0x1 ff
+                0x0000000000001fa4        0x3 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+                0x0000000000001fa4                cc1101_miso_pin
+ *fill*         0x0000000000001fa7        0x1 ff
  .rodata.status_led_red
-                0x0000000000001fac        0x3 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
-                0x0000000000001fac                status_led_red
- *fill*         0x0000000000001faf        0x1 ff
+                0x0000000000001fa8        0x3 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+                0x0000000000001fa8                status_led_red
+ *fill*         0x0000000000001fab        0x1 ff
  .rodata.cc1101_gdo0
-                0x0000000000001fb0        0x3 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
-                0x0000000000001fb0                cc1101_gdo0
- *fill*         0x0000000000001fb3        0x1 ff
+                0x0000000000001fac        0x3 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+                0x0000000000001fac                cc1101_gdo0
+ *fill*         0x0000000000001faf        0x1 ff
  .rodata.common_pins
-                0x0000000000001fb4       0x30 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
-                0x0000000000001fb4                common_pins
+                0x0000000000001fb0       0x30 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+                0x0000000000001fb0                common_pins
  .rodata.str1.4
-                0x0000000000001fe4       0x3c objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
-                                         0x3a (size before relaxing)
+                0x0000000000001fe0       0x34 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+                                         0x32 (size before relaxing)
  .rodata.status_led_green
-                0x0000000000002020        0x3 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
-                0x0000000000002020                status_led_green
- *fill*         0x0000000000002023        0x1 ff
+                0x0000000000002014        0x3 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+                0x0000000000002014                status_led_green
+ *fill*         0x0000000000002017        0x1 ff
  .rodata.cc1101_cs_pin
-                0x0000000000002024        0x3 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
-                0x0000000000002024                cc1101_cs_pin
+                0x0000000000002018        0x3 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
+                0x0000000000002018                cc1101_cs_pin
  *(SORT(.got*))
-                0x0000000000002028                . = ALIGN (0x4)
- *fill*         0x0000000000002027        0x1 ff
-                0x0000000000002028                _end_text = .
+                0x000000000000201c                . = ALIGN (0x4)
+ *fill*         0x000000000000201b        0x1 ff
+                0x000000000000201c                _end_text = .
 
-.glue_7         0x0000000000002028        0x0
- .glue_7        0x0000000000002028        0x0 linker stubs
+.glue_7         0x000000000000201c        0x0
+ .glue_7        0x000000000000201c        0x0 linker stubs
 
-.glue_7t        0x0000000000002028        0x0
- .glue_7t       0x0000000000002028        0x0 linker stubs
+.glue_7t        0x000000000000201c        0x0
+ .glue_7t       0x000000000000201c        0x0 linker stubs
 
-.vfp11_veneer   0x0000000000002028        0x0
- .vfp11_veneer  0x0000000000002028        0x0 linker stubs
+.vfp11_veneer   0x000000000000201c        0x0
+ .vfp11_veneer  0x000000000000201c        0x0 linker stubs
 
-.v4_bx          0x0000000000002028        0x0
- .v4_bx         0x0000000000002028        0x0 linker stubs
+.v4_bx          0x000000000000201c        0x0
+ .v4_bx         0x000000000000201c        0x0 linker stubs
 
-.iplt           0x0000000000002028        0x0
- .iplt          0x0000000000002028        0x0 objs/core/watchdog.o
+.iplt           0x000000000000201c        0x0
+ .iplt          0x000000000000201c        0x0 objs/core/watchdog.o
 
-.rel.dyn        0x0000000000002028        0x0
- .rel.iplt      0x0000000000002028        0x0 objs/core/watchdog.o
-                0x0000000000002028                . = ALIGN (0x4)
+.rel.dyn        0x000000000000201c        0x0
+ .rel.iplt      0x000000000000201c        0x0 objs/core/watchdog.o
+                0x000000000000201c                . = ALIGN (0x4)
 
-.data           0x0000000010000000      0x1c2 load address 0x0000000000002028
+.data           0x0000000010000000      0x1c2 load address 0x000000000000201c
                 0x0000000010000000                _start_data = .
  *(SORT(.data*))
  .data.lpc_private
@@ -1272,11 +1270,11 @@ LOAD objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
                 0x00000000100001bc        0x6 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
                 0x00000000100001c2                _end_data = .
 
-.igot.plt       0x00000000100001c4        0x0 load address 0x00000000000021ea
+.igot.plt       0x00000000100001c4        0x0 load address 0x00000000000021de
  .igot.plt      0x00000000100001c4        0x0 objs/core/watchdog.o
                 0x00000000100001c4                . = ALIGN (0x4)
 
-.bss            0x00000000100001c4      0x18c load address 0x00000000000021ea
+.bss            0x00000000100001c4      0x18c load address 0x00000000000021de
                 0x00000000100001c4                _start_bss = .
  *(SORT(.bss*))
  .bss.wdt_callback
@@ -1320,7 +1318,7 @@ LOAD objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
  .bss.periodic_match
                 0x0000000010000348        0x1 objs/drivers/rtc.o
  .bss.cc_ptr    0x0000000010000349        0x1 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
- .bss.loop.4472
+ .bss.loop.4471
                 0x000000001000034a        0x1 objs/apps/rf_sub1G/IoT_mini_projet_RF_gateway/main.o
  *(SORT(COMMON))
  *fill*         0x000000001000034b        0x1 

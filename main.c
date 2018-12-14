@@ -166,16 +166,15 @@ static volatile uint32_t update_display = 0;
 static volatile uint8_t cc_tx_buff[RF_BUFF_LEN];
 static volatile uint8_t cc_ptr = 0;
 
-void mettageDansLeBuffer(uint32_t gpio){
-	char message = "hello\n\r";
+// void mettageDansLeBuffer(uint32_t gpio){
+// 	char message = "hello\n\r";
 	
-	memcpy((char*)&(cc_tx_buff[0]), message, sizeof(message));
-	cc_ptr = sizeof(message); 
-    cc_tx=1;
-}
+// 	memcpy((char*)&(cc_tx_buff[0]), message, sizeof(message));
+// 	cc_ptr = sizeof(message); 
+//     cc_tx=1;
+// }
 
 
-// SALT:ID:T=1234,H=123
 void send_on_rf(void)
 {
 	uint8_t cc_tx_data[RF_BUFF_LEN + 2];
@@ -197,10 +196,23 @@ void send_on_rf(void)
 }
 
 
+void handle_uart_cmd(uint8_t c)
+{
+	if (cc_ptr < RF_BUFF_LEN) {
+		cc_tx_buff[cc_ptr++] = c;
+	} else {
+		cc_ptr = 0;
+	}
+	if ((c == '\n') || (c == '\r')) {
+		cc_tx = 1;
+	}
+
+}
+
 int main(void)
 {
 	system_init();
-	uart_on(UART0, 115200, NULL);
+	uart_on(UART0, 115200, handle_uart_cmd);
 	ssp_master_on(0, LPC_SSP_FRAME_SPI, 8, 4*1000*1000); /* bus_num, frame_type, data_width, rate */
 	status_led_config(&status_led_green, &status_led_red);
 
@@ -208,7 +220,7 @@ int main(void)
 	rf_config();
 
     /* Activate the chenillard on Rising edge (button release) */
-	set_gpio_callback(mettageDansLeBuffer, &button, EDGE_RISING);
+	// set_gpio_callback(mettageDansLeBuffer, &button, EDGE_RISING);
 
 	uprintf(UART0, "App started\n\r");
 
