@@ -221,7 +221,7 @@ int main(void)
 	rf_config();
 
     /* Activate the chenillard on Rising edge (button release) */
-	set_gpio_callback(sendResetScreenConfig_DEBUG, &button, EDGE_RISING);
+	//set_gpio_callback(sendResetScreenConfig_DEBUG, &button, EDGE_RISING);
 
 	uprintf(UART0, "App started\n\r");
 
