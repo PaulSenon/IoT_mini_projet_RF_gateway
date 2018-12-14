@@ -166,13 +166,14 @@ static volatile uint32_t update_display = 0;
 static volatile uint8_t cc_tx_buff[RF_BUFF_LEN];
 static volatile uint8_t cc_ptr = 0;
 
-// void mettageDansLeBuffer(uint32_t gpio){
-// 	char message = "hello\n\r";
-	
-// 	memcpy((char*)&(cc_tx_buff[0]), message, sizeof(message));
-// 	cc_ptr = sizeof(message); 
-//     cc_tx=1;
-// }
+void sendResetScreenConfig_DEBUG(uint32_t gpio){
+	char message[50];
+	int len = 50;
+	snprintf ( message, 50, "%d:LHT",SALT);
+	memcpy((char*)cc_tx_buff, message, len);
+	cc_ptr = len;
+    cc_tx=1;
+}
 
 
 void send_on_rf(void)
@@ -220,7 +221,7 @@ int main(void)
 	rf_config();
 
     /* Activate the chenillard on Rising edge (button release) */
-	// set_gpio_callback(mettageDansLeBuffer, &button, EDGE_RISING);
+	set_gpio_callback(sendResetScreenConfig_DEBUG, &button, EDGE_RISING);
 
 	uprintf(UART0, "App started\n\r");
 
